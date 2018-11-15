@@ -15,6 +15,6 @@ public class GreetingController {
     
     @RequestMapping("/greeting")
     public String greeting() {
-        return message + "," + name;
+        return message + ", " + name;
     }
 }
