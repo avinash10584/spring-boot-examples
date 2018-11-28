@@ -20,7 +20,7 @@ public class UserController {
     private AccountService userService;
     
     @RequestMapping(path = "/enroll", method = RequestMethod.POST)
-    public ResponseEntity<User> enroll(@Valid @RequestBody User user) {
+    public ResponseEntity<User> enroll(@RequestBody User user) {
         userService.enroll(user);
         return new ResponseEntity<User>(user, HttpStatus.CREATED); 
     }
