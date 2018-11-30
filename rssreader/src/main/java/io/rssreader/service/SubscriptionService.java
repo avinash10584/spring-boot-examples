@@ -1,11 +1,11 @@
-package io.readily.service;
+package io.rssreader.service;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 
 import org.springframework.validation.annotation.Validated;
 
-import io.readily.model.Subscription;
+import io.rssreader.model.Subscription;
 
 @Validated
 public interface SubscriptionService {

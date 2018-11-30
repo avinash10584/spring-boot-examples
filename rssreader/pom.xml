@@ -2,7 +2,7 @@
   
   <modelVersion>4.0.0</modelVersion>
   <groupId>dev.reedly.io</groupId>
-  <artifactId>rssreader</artifactId>
+  <artifactId>spring-boot-mongodb</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
   <packaging>war</packaging>

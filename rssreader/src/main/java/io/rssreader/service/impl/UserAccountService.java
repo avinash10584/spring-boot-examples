@@ -1,11 +1,11 @@
-package io.readily.service.impl;
+package io.rssreader.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.readily.model.User;
-import io.readily.repositories.UserRepository;
-import io.readily.service.AccountService;
+import io.rssreader.model.User;
+import io.rssreader.repositories.UserRepository;
+import io.rssreader.service.AccountService;
 
 @Service
 public class UserAccountService implements AccountService {
@@ -33,7 +33,10 @@ public class UserAccountService implements AccountService {
     }
 
     public void resetPassword(String token, String password) {
-        // TODO Auto-generated method stub
-        
+        // TODO Auto-generated method stub        
+    }
+
+    public User getByEmail(String email) {
+        return userRepo.findByEmail(email);
     }
 }

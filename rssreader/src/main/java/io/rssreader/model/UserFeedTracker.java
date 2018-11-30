@@ -1,4 +1,4 @@
-package io.readily.model;
+package io.rssreader.model;
 
 import javax.validation.constraints.NotEmpty;
 

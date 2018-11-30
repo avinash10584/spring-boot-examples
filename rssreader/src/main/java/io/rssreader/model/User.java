@@ -1,4 +1,4 @@
-package io.readily.model;
+package io.rssreader.model;
 
 import java.util.Date;
 import java.util.List;
@@ -11,10 +11,13 @@ import javax.validation.constraints.Pattern;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Data
 @Document(collection = "users")
+@JsonIgnoreProperties(value = { "target" })
 public class User {
     
     private boolean active = true;

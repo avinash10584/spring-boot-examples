@@ -1,4 +1,4 @@
-package io.readily.model;
+package io.rssreader.model;
 
 import java.util.Date;
 

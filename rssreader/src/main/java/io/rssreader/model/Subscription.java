@@ -1,4 +1,4 @@
-package io.readily.model;
+package io.rssreader.model;
 
 import java.util.Date;
 
@@ -26,7 +26,7 @@ public class Subscription {
     
     private boolean enabled;
     
-    @DBRef
+    @DBRef(lazy=true)
     private User user;
     
     private String permanentRedirectedUrl;

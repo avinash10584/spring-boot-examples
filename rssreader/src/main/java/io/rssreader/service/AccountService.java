@@ -1,10 +1,10 @@
-package io.readily.service;
+package io.rssreader.service;
 
 import javax.validation.Valid;
 
 import org.springframework.validation.annotation.Validated;
 
-import io.readily.model.User;
+import io.rssreader.model.User;
 
 @Validated
 public interface AccountService {
@@ -16,4 +16,5 @@ public interface AccountService {
     
     String resetPasswordRequest(String email);
     void resetPassword(String token, String password);
+    User getByEmail(String email);
 }
