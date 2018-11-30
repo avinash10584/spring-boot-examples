@@ -1,3 +1,6 @@
 /target/
-/Development/
 /bin/
+/.settings/
+/.project
+/.classpath
+/Development/
