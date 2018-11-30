@@ -32,5 +32,7 @@ public class User {
     @Past(message = "Last login date should be set in past")
     private Date lastLogin;
     
+    private String password;
+    
     List<Subscription> subscriptions;        
 }

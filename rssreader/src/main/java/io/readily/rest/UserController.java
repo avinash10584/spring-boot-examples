@@ -1,7 +1,5 @@
 package io.readily.rest;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,14 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
 import io.readily.model.User;
 import io.readily.service.AccountService;
 
-@RestController
+@RestController("/user")
 public class UserController {
 
     @Autowired
     private AccountService userService;
     
-    @RequestMapping(path = "/enroll", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<User> enroll(@RequestBody User user) {
+        userService.enroll(user);
+        return new ResponseEntity<User>(user, HttpStatus.CREATED); 
+    }
+    
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity<User> update(@RequestBody User user) {
         userService.enroll(user);
         return new ResponseEntity<User>(user, HttpStatus.CREATED); 
     }

@@ -8,6 +8,12 @@ import io.readily.model.User;
 
 @Validated
 public interface AccountService {
-    void enroll(@Valid User user);
-    void resetPassword(String email);    
+    
+    User enroll(@Valid User user);
+    User updateProfile(@Valid User user);
+    
+    User deActivate(String userId);
+    
+    String resetPasswordRequest(String email);
+    void resetPassword(String token, String password);
 }
