@@ -1,7 +1,10 @@
 package io.readily.model;
 
 import java.util.Date;
+
 import javax.validation.constraints.NotEmpty;
+
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
@@ -14,7 +17,7 @@ public class Subscription {
     
     private Date modifiedDate;
     
-    private String permanentlyRemoved;
+    private boolean permanentlyRemoved;
     
     @NotEmpty
     private String feedURL;
@@ -23,11 +26,8 @@ public class Subscription {
     
     private boolean enabled;
     
-    @NotEmpty
-    private String eTag;
-    
-    @NotEmpty
-    private String link;
+    @DBRef
+    private User user;
     
     private String permanentRedirectedUrl;
     

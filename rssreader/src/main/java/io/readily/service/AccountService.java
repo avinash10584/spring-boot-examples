@@ -12,7 +12,7 @@ public interface AccountService {
     User enroll(@Valid User user);
     User updateProfile(@Valid User user);
     
-    User deActivate(String userId);
+    User deActivate(String lastName);
     
     String resetPasswordRequest(String email);
     void resetPassword(String token, String password);

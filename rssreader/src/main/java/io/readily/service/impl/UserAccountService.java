@@ -1,7 +1,5 @@
 package io.readily.service.impl;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,10 +21,10 @@ public class UserAccountService implements AccountService {
         return userRepo.save(user);
     }
 
-    public User deActivate(String userId) {
-        Optional<User> user = userRepo.findById(userId);
-        user.get().setActive(false);
-        return userRepo.save(user.get());
+    public User deActivate(String lastName) {
+        User user = userRepo.findByLastName(lastName);
+        user.setActive(false);
+        return userRepo.save(user);
     }
 
     public String resetPasswordRequest(String email) {

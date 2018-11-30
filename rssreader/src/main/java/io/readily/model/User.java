@@ -8,6 +8,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
@@ -18,7 +19,8 @@ public class User {
     
     private boolean active = true;
     
-    @Email(message = "Email Address is not a valid format")
+    @Id
+    @Email(message = "{email.invalid}")
     private String email;
     
     @NotEmpty(message = "Last name is compulsory")

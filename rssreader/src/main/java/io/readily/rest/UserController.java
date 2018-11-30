@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import io.readily.model.User;
 import io.readily.service.AccountService;
 
-@RestController("/user")
+@RestController
+@RequestMapping(value="/user")
 public class UserController {
 
     @Autowired
@@ -25,7 +26,7 @@ public class UserController {
     
     @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<User> update(@RequestBody User user) {
-        userService.enroll(user);
+        userService.updateProfile(user);
         return new ResponseEntity<User>(user, HttpStatus.CREATED); 
     }
 }
