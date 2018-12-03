@@ -1,0 +1,28 @@
+info:
+  component: Zuul Server
+  
+management:  
+  endpoint:
+    restart:
+      enabled: true
+    shutdown:
+      enabled: true
+
+zuul:
+  prefix: /api
+  routes:
+    account:
+          path: /account/**
+          serviceId: account-service
+    customer:
+        path: /customer/**
+        serviceId: customer-service
+    zuulserver: /self/**
+
+server:
+  port: 8765
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG

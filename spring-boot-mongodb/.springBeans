@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:io.avinash10584.Application</config>
+		<config>java:avi.micro.service.gateway.Application</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
