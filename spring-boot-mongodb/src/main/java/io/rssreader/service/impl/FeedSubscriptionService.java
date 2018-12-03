@@ -18,7 +18,7 @@ public class FeedSubscriptionService implements SubscriptionService {
     }
 
     public void unsubscribe(String feedURL, String email) {
-        // TODO Auto-generated method stub        
+        subscriptionRepo.save(subscription);        
     }
 
     public Iterable<Subscription> listForUser(String email) {
