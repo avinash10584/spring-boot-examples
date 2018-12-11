@@ -4,13 +4,13 @@ server:
 spring:  
   application:
     name: account-service
-    profiles: 
-        active: "@spring.profiles.active@"
-    data: 
-        mongodb: 
-            database: rssreader
-            host: localhost
-            port: 27017
+  profiles: 
+      active: "@spring.profiles.active@"
+  data: 
+      mongodb: 
+          database: rssreader
+          host: localhost
+          port: 27017
 
 management: 
     endpoints: 
@@ -21,7 +21,7 @@ management:
 eureka:  
   client:
     serviceUrl:
-      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
+      defaultZone: http://localhost:8761/eureka/, http://localhost:8762/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 10
     leaseExpirationDurationInSeconds: 10
