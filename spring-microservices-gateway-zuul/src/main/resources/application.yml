@@ -1,6 +1,12 @@
 info:
   component: Zuul Server
-  
+
+spring:  
+  application:
+    name: gateway-server
+  profiles: 
+      active: "@spring.profiles.active@"
+        
 management:  
   endpoint:
     restart:
@@ -12,17 +18,25 @@ zuul:
   prefix: /api
   routes:
     account:
-          path: /account/**
+          path: /**
           serviceId: account-service
-    customer:
-        path: /customer/**
-        serviceId: customer-service
-    zuulserver: /self/**
 
 server:
   port: 8765
 
-logging:
-  level:
+eureka:  
+  client: 
+    serviceUrl: 
+      defaultZone: http://127.0.0.1:8761/eureka/, http://localhost:8762/eureka/
+  instance: 
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 10
+    
+ribbon:
+  eureka:
+    enabled: true
+        
+logging: 
+  level: 
     ROOT: INFO
     org.springframework.web: DEBUG
