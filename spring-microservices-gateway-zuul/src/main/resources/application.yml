@@ -6,13 +6,8 @@ spring:
     name: gateway-server
   profiles: 
       active: "@spring.profiles.active@"
-        
-management:  
-  endpoint:
-    restart:
-      enabled: true
-    shutdown:
-      enabled: true
+  main: 
+    allow-bean-definition-overriding: true 
 
 zuul:
   prefix: /api
@@ -20,7 +15,6 @@ zuul:
     account:
           path: /**
           serviceId: account-service
-
 server:
   port: 8765
 
@@ -33,10 +27,10 @@ eureka:
     leaseExpirationDurationInSeconds: 10
     
 ribbon:
-  eureka:
+  eureka: 
     enabled: true
         
 logging: 
   level: 
     ROOT: INFO
-    org.springframework.web: DEBUG
+    org.springframework.web: TRACE   

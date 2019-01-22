@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:avi.micro.service.account.Application</config>
+		<config>java:avi.micro.service.test.user.Application</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
