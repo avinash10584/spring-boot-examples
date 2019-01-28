@@ -2,6 +2,7 @@ package avi.micro.service.test.user.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -40,6 +41,11 @@ public class UserAccountService implements AccountService {
     }
 
     public User getByEmail(String email) {
-        return users.stream().filter(x -> x.getEmail().equals(email)).findFirst().get();
+        Optional<User> user = users.stream().filter(x -> x.getEmail().equals(email)).findFirst();
+        if (user.isPresent()) {
+            return user.get();
+        } else {
+            return null;
+        }
     }
 }
