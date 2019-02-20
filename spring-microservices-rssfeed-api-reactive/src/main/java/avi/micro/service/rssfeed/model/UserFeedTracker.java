@@ -1,4 +1,4 @@
-package avi.micro.service.rssreader.model;
+package avi.micro.service.rssfeed.model;
 
 import javax.validation.constraints.NotEmpty;
 

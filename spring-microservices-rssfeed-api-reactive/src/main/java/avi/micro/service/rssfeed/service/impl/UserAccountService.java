@@ -1,11 +1,11 @@
-package avi.micro.service.rssreader.service.impl;
+package avi.micro.service.rssfeed.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import avi.micro.service.rssreader.model.User;
-import avi.micro.service.rssreader.repositories.UserRepository;
-import avi.micro.service.rssreader.service.AccountService;
+import avi.micro.service.rssfeed.model.User;
+import avi.micro.service.rssfeed.repositories.UserRepository;
+import avi.micro.service.rssfeed.service.AccountService;
 
 @Service
 public class UserAccountService implements AccountService {

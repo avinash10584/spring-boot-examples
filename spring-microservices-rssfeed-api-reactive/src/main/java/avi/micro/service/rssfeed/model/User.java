@@ -1,4 +1,4 @@
-package avi.micro.service.rssreader.model;
+package avi.micro.service.rssfeed.model;
 
 import java.util.Date;
 import java.util.List;

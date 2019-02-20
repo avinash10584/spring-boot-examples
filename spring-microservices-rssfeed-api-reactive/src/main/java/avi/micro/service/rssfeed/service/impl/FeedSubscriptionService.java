@@ -1,11 +1,11 @@
-package avi.micro.service.rssreader.service.impl;
+package avi.micro.service.rssfeed.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import avi.micro.service.rssreader.model.Subscription;
-import avi.micro.service.rssreader.repositories.SubscriptionRepository;
-import avi.micro.service.rssreader.service.SubscriptionService;
+import avi.micro.service.rssfeed.model.Subscription;
+import avi.micro.service.rssfeed.repositories.SubscriptionRepository;
+import avi.micro.service.rssfeed.service.SubscriptionService;
 
 @Service
 public class FeedSubscriptionService implements SubscriptionService {

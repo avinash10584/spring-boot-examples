@@ -1,10 +1,10 @@
-package avi.micro.service.rssreader.service;
+package avi.micro.service.rssfeed.service;
 
 import javax.validation.Valid;
 
 import org.springframework.validation.annotation.Validated;
 
-import avi.micro.service.rssreader.model.User;
+import avi.micro.service.rssfeed.model.User;
 
 @Validated
 public interface AccountService {

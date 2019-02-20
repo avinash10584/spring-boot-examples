@@ -1,11 +1,11 @@
-package avi.micro.service.rssreader.service;
+package avi.micro.service.rssfeed.service;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 
 import org.springframework.validation.annotation.Validated;
 
-import avi.micro.service.rssreader.model.Subscription;
+import avi.micro.service.rssfeed.model.Subscription;
 
 @Validated
 public interface SubscriptionService {

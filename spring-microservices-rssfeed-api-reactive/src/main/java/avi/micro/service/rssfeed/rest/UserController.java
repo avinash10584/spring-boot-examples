@@ -1,4 +1,4 @@
-package avi.micro.service.rssreader.rest;
+package avi.micro.service.rssfeed.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import avi.micro.service.rssreader.model.Subscription;
-import avi.micro.service.rssreader.model.User;
-import avi.micro.service.rssreader.service.AccountService;
-import avi.micro.service.rssreader.service.SubscriptionService;
+import avi.micro.service.rssfeed.model.Subscription;
+import avi.micro.service.rssfeed.model.User;
+import avi.micro.service.rssfeed.service.AccountService;
+import avi.micro.service.rssfeed.service.SubscriptionService;
 
 @RestController
 @RequestMapping(value="/user")

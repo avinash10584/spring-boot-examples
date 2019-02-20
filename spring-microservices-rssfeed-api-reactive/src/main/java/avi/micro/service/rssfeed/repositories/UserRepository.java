@@ -1,8 +1,8 @@
-package avi.micro.service.rssreader.repositories;
+package avi.micro.service.rssfeed.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
-import avi.micro.service.rssreader.model.User;
+import avi.micro.service.rssfeed.model.User;
 
 public interface UserRepository extends CrudRepository<User, String> {
     
