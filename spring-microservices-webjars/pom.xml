@@ -106,6 +106,17 @@
 	          </execution>
 	        </executions>
         </plugin>
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
+            <configuration>
+		        <buildArgs>
+		            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+		        </buildArgs>
+		        <imageName>dockerio/${project.artifactId}</imageName>
+                <dockerDirectory>src/main/docker</dockerDirectory>
+            </configuration>
+        </plugin>
     </plugins>
  </build>
  
