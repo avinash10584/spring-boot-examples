@@ -1,0 +1,48 @@
+node {
+
+    withMaven(maven:'maven') {
+
+        stage('Checkout') {
+            git url: 'https://github.com/avinash10584/spring-boot-examples.git', 
+            	credentialsId: 'github-avinash10584', branch: 'master'
+        }
+
+        stage('Build') {
+        	dir ('spring-microservices-service-discovery-eureka') {
+	            sh 'mvn clean install'
+	
+	            def pom = readMavenPom file:'pom.xml'
+	            print pom.version
+	            env.version = pom.version
+            }
+        }
+
+        stage('Image') {
+            dir ('spring-microservices-service-discovery-eureka') {
+                def app = docker.build "spring-boot-examples/discovery-service:${env.version}"
+                //app.push()
+            }
+        }
+
+		stage('Push Image') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                        app.push("${BUILD_NUMBER}")
+                        app.push("latest")
+                    }
+                }
+            }
+        }        
+        
+    /*    stage ('Run') {
+            docker.image("localhost:5000/discovery-service:${env.version}").run('-p 8761:8761 -h discovery --name discovery')
+        }
+
+        stage ('Final') {
+            build job: 'account-service-pipeline', wait: false
+        }    */  
+
+    }
+
+}
