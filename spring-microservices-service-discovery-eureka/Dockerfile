@@ -11,5 +11,6 @@ EXPOSE 8761
 COPY ./target/spring-microservices-service-discovery-0.0.1-SNAPSHOT.jar /usr/service-discovery-0.0.1-SNAPSHOT.jar
 WORKDIR /usr/service-discovery-0.0.1-SNAPSHOT.jar
 
+
 # Run the jar file 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app-service-discovery.jar"]
